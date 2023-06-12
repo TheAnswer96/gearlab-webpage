@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      padding-bottom: 100px;
+    }
+    .navbar {
+      background-color: #000;
+    }
+    .navbar-brand {
+      color: #fff;
+      font-weight: bold;
+    }
+    .navbar-nav .nav-link {
+      color: #fff;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #000;
+      color: #fff;
+      padding: 15px 0;
+    }
+    .grant-section {
+      padding: 60px 0;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+    .grant-section .grant-box {
+      display: flex;
+      margin-bottom: 40px;
+    }
+    .grant-section .grant-box .grant-image {
+      width: 120px;
+      flex-shrink: 0;
+      margin-right: 20px;
+    }
+    .grant-section .grant-box .grant-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .grant-section .grant-box .grant-bio {
+      flex-grow: 1;
+    }
+    .grant-section .grant-box .grant-bio h3 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .grant-section .grant-box .grant-bio h4 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .grant-section .grant-box .grant-bio p {
+      font-size: 16px;
+    }
+    .grant-section .grant-box .grant-bio .grant-link {
+      margin-top: 10px;
+    }
+    .grant-section .grant-box .grant-bio a {
+      color: #000;
+      text-decoration: none;
+    }
+    .grant-section .grant-box .grant-bio .grant-link i {
+      margin-right: 5px;
+    }
+
+    .grant-link a {
+    color: #ffffff;
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  .grant-link a:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  #icon-img{
+      width: 45px;
+      height: 45px;
+  }
+  </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="home.htm"><img id="icon-img" src="src/GEAR-icon.png" alt="Logo"> GEAR LAB</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="team.htm">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects.htm">Grants</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="publications.htm">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="thesis.htm">Thesis</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  <!-- Team Section -->
+  <section class="grant-section">
+    <div class="container">
+      <div class="grant-box">
+        <div class="grant-image">
+          <img src="src/haly.png" alt="Grant 1">
+        </div>
+        <div class="grant-bio">
+          <h3>Haly.ID</h3>
+          <h4>HALYomorpha halys IDentification: Innovative ICT tools for targeted monitoring and sustainable management of the brown marmorated stink bug and other pests</h4>
+          <p>
+              The aims of the project are: (a) the design and implementation of an autonomous innovative data acquisition system in-field to detect HH and other pests as well, (b) the design and implement a classification system to detect fruits damages not visible at naked eye, (c) a software solution, based on ML techniques, to derive as furthest as we can the epidemiological model of HH or/and other pests, and (d) a logbook available to further steps of the fruit production chain.
+          </p>
+          <div class="grant-link">
+              <a href="https://www.haly-id.eu" target="_blank" class="btn btn-primary">More</a>
+          </div>
+        </div>
+      </div>
+      <div class="grant-box">
+        <div class="grant-image">
+          <img src="src/geo.jpg" alt="Grant 2">
+        </div>
+        <div class="grant-bio">
+          <h3>GEO-SAFE</h3>
+          <h4>Geospatial Based Environment For Optimisation Systems Addressing Fire Emergencies</h4>
+          <p>
+              The GEO-SAFE project, aims at creating a network enabling the two regions to exchange knowledge, ideas and experience, thus boosting the progress of wildfires knowledge and the related development of innovative methods for dealing efficiently with such fires. More precisely, the GEO-SAFE project focuses on developing the tools enabling to set up an integrated decision support system optimizing the resources during the response phase.
+          </p>
+          <div class="grant-link">
+              <a href="https://geosafe.lessonsonfire.eu" target="_blank" class="btn btn-primary">More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-white text-center">
+    <p>© Copyright 2022 GEAR Lab – Group of rEsearch in Algorithms for emeRgent models – Dmi@UniPG. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
