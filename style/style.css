@@ -227,25 +227,11 @@ h1 {
     border-color: #0056b3;
 }
 
-
-
 .box li {
     margin-bottom: 10px;
 }
 
-.thesis-container {
-    background-color: #fff;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.thesis-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.thesis-title.crossed-out {
+.crossed-out {
     text-decoration: line-through;
     color: #888;
 }

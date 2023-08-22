@@ -13,25 +13,63 @@
 <?php include_once('layout/header.html'); ?>
 
 <!-- Section -->
-<main>
-    <div class="thesis-container">
-        <h2>Available Thesis</h2>
-        <ul>
-            <li class="thesis-title">Thesis 1</li>
-            <li class="thesis-title">Thesis 2</li>
-            <li class="thesis-title">Thesis 3</li>
-        </ul>
-    </div>
+<section class="block-section">
+    <div class="container">
 
-    <div class="thesis-container">
-        <h2>Taken Thesis</h2>
-        <ul>
-            <li class="thesis-title crossed-out">Thesis 4</li>
-            <li class="thesis-title crossed-out">Thesis 5</li>
-            <li class="thesis-title crossed-out">Thesis 6</li>
-        </ul>
+        <br>
+        <h2><b>Proposed Thesis</b></h2>
+        <br>
+
+        <div class="box">
+            <h2>2023</h2>
+            <div class="block-content">
+                <ul>
+
+                    <li class="crossed-out">Chengyi Qu, Francesco Betti Sorbelli, Rounak Singh, Prasad Calyam, Sajal K. Das:
+                        <i>Environmentally-Aware and Energy-Efficient Multi-Drone Coordination and Networking for Disaster Response.</i> <b>IEEE Trans. Netw. Serv. Manag.</b> 20(2): 1093-1109 (2023)</li>
+
+                    <li>Francesco Betti Sorbelli, Federico Corò, Lorenzo Palazzetti, Cristina M. Pinotti, Giulio Rigoni:
+                        <i>How the Wind Can Be Leveraged for Saving Energy in a Truck-Drone Delivery System.</i> <b>IEEE Trans. Intell. Transp. Syst.</b> 24(4): 4038-4049 (2023)</li>
+
+                    <li class="crossed-out">Francesco Betti Sorbelli, Cristina M. Pinotti, Giulio Rigoni:
+                        <i>On the Evaluation of a Drone-Based Delivery System on a Mixed Euclidean-Manhattan Grid.</i> <b>IEEE Trans. Intell. Transp. Syst.</b> 24(1): 1276-1287 (2023)</li>
+
+                    <li>Anas Alsoliman, Giulio Rigoni, Davide Callegaro, Marco Levorato, Cristina M. Pinotti, Mauro Conti:
+                        <i>Intrusion Detection Framework for Invasive FPV Drones Using Video Streaming Characteristics.</i> <b>ACM Trans. Cyber Phys. Syst.</b> 7(2): 12:1-12:29 (2023)</li>
+
+                    <li class="crossed-out">Serafino Cicerone, Alessia Di Fonso, Gabriele Di Stefano, Alfredo Navarra:
+                        <i>Molecular Oblivious Robots: A New Model for Robots With Assembling Capabilities.</i> <b>IEEE Access</b> 11: 15701-15724 (2023)</li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>2022</h2>
+            <div class="block-content">
+                <ul>
+
+                    <li class="crossed-out">Chengyi Qu, Francesco Betti Sorbelli, Rounak Singh, Prasad Calyam, Sajal K. Das:
+                        <i>Environmentally-Aware and Energy-Efficient Multi-Drone Coordination and Networking for Disaster Response.</i> <b>IEEE Trans. Netw. Serv. Manag.</b> 20(2): 1093-1109 (2023)</li>
+
+                    <li>Francesco Betti Sorbelli, Federico Corò, Lorenzo Palazzetti, Cristina M. Pinotti, Giulio Rigoni:
+                        <i>How the Wind Can Be Leveraged for Saving Energy in a Truck-Drone Delivery System.</i> <b>IEEE Trans. Intell. Transp. Syst.</b> 24(4): 4038-4049 (2023)</li>
+
+                    <li class="crossed-out">Francesco Betti Sorbelli, Cristina M. Pinotti, Giulio Rigoni:
+                        <i>On the Evaluation of a Drone-Based Delivery System on a Mixed Euclidean-Manhattan Grid.</i> <b>IEEE Trans. Intell. Transp. Syst.</b> 24(1): 1276-1287 (2023)</li>
+
+                    <li>Anas Alsoliman, Giulio Rigoni, Davide Callegaro, Marco Levorato, Cristina M. Pinotti, Mauro Conti:
+                        <i>Intrusion Detection Framework for Invasive FPV Drones Using Video Streaming Characteristics.</i> <b>ACM Trans. Cyber Phys. Syst.</b> 7(2): 12:1-12:29 (2023)</li>
+
+                    <li class="crossed-out">Serafino Cicerone, Alessia Di Fonso, Gabriele Di Stefano, Alfredo Navarra:
+                        <i>Molecular Oblivious Robots: A New Model for Robots With Assembling Capabilities.</i> <b>IEEE Access</b> 11: 15701-15724 (2023)</li>
+
+                </ul>
+            </div>
+        </div>
+
     </div>
-</main>
+</section>
 
 <!-- Footer -->
 <?php include_once('layout/footer.html'); ?>
