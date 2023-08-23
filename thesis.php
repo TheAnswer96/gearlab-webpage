@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GEAR Lab - Proposed Thesis</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
@@ -25,20 +26,7 @@
             <div class="block-content">
                 <ul>
 
-                    <li class="crossed-out">Chengyi Qu, Francesco Betti Sorbelli, Rounak Singh, Prasad Calyam, Sajal K. Das:
-                        <i>Environmentally-Aware and Energy-Efficient Multi-Drone Coordination and Networking for Disaster Response.</i> <b>IEEE Trans. Netw. Serv. Manag.</b> 20(2): 1093-1109 (2023)</li>
-
-                    <li>Francesco Betti Sorbelli, Federico Corò, Lorenzo Palazzetti, Cristina M. Pinotti, Giulio Rigoni:
-                        <i>How the Wind Can Be Leveraged for Saving Energy in a Truck-Drone Delivery System.</i> <b>IEEE Trans. Intell. Transp. Syst.</b> 24(4): 4038-4049 (2023)</li>
-
-                    <li class="crossed-out">Francesco Betti Sorbelli, Cristina M. Pinotti, Giulio Rigoni:
-                        <i>On the Evaluation of a Drone-Based Delivery System on a Mixed Euclidean-Manhattan Grid.</i> <b>IEEE Trans. Intell. Transp. Syst.</b> 24(1): 1276-1287 (2023)</li>
-
-                    <li>Anas Alsoliman, Giulio Rigoni, Davide Callegaro, Marco Levorato, Cristina M. Pinotti, Mauro Conti:
-                        <i>Intrusion Detection Framework for Invasive FPV Drones Using Video Streaming Characteristics.</i> <b>ACM Trans. Cyber Phys. Syst.</b> 7(2): 12:1-12:29 (2023)</li>
-
-                    <li class="crossed-out">Serafino Cicerone, Alessia Di Fonso, Gabriele Di Stefano, Alfredo Navarra:
-                        <i>Molecular Oblivious Robots: A New Model for Robots With Assembling Capabilities.</i> <b>IEEE Access</b> 11: 15701-15724 (2023)</li>
+                    <li class="crossed-out">Comparison of weather data between Arpae dataset and a custom microclimate station located inside an orchard.</li>
 
                 </ul>
             </div>
@@ -49,20 +37,7 @@
             <div class="block-content">
                 <ul>
 
-                    <li class="crossed-out">Chengyi Qu, Francesco Betti Sorbelli, Rounak Singh, Prasad Calyam, Sajal K. Das:
-                        <i>Environmentally-Aware and Energy-Efficient Multi-Drone Coordination and Networking for Disaster Response.</i> <b>IEEE Trans. Netw. Serv. Manag.</b> 20(2): 1093-1109 (2023)</li>
-
-                    <li>Francesco Betti Sorbelli, Federico Corò, Lorenzo Palazzetti, Cristina M. Pinotti, Giulio Rigoni:
-                        <i>How the Wind Can Be Leveraged for Saving Energy in a Truck-Drone Delivery System.</i> <b>IEEE Trans. Intell. Transp. Syst.</b> 24(4): 4038-4049 (2023)</li>
-
-                    <li class="crossed-out">Francesco Betti Sorbelli, Cristina M. Pinotti, Giulio Rigoni:
-                        <i>On the Evaluation of a Drone-Based Delivery System on a Mixed Euclidean-Manhattan Grid.</i> <b>IEEE Trans. Intell. Transp. Syst.</b> 24(1): 1276-1287 (2023)</li>
-
-                    <li>Anas Alsoliman, Giulio Rigoni, Davide Callegaro, Marco Levorato, Cristina M. Pinotti, Mauro Conti:
-                        <i>Intrusion Detection Framework for Invasive FPV Drones Using Video Streaming Characteristics.</i> <b>ACM Trans. Cyber Phys. Syst.</b> 7(2): 12:1-12:29 (2023)</li>
-
-                    <li class="crossed-out">Serafino Cicerone, Alessia Di Fonso, Gabriele Di Stefano, Alfredo Navarra:
-                        <i>Molecular Oblivious Robots: A New Model for Robots With Assembling Capabilities.</i> <b>IEEE Access</b> 11: 15701-15724 (2023)</li>
+                    <li class="crossed-out">Implementation of drone-based delivery algorithms in a mixed Euclidean-Manhattan Grids.</li>
 
                 </ul>
             </div>

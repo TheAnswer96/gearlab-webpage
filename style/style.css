@@ -213,8 +213,8 @@ h1 {
 
 .block-link a {
     color: #ffffff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #2fa987;
+    border-color: black;
     transition: background-color 0.3s ease;
     display: inline-block;
     padding: 8px 16px;
@@ -223,8 +223,8 @@ h1 {
 }
 
 .block-link a:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #2fcb76;
+    border-color: black;
 }
 
 .box li {
