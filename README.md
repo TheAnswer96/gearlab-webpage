@@ -67,10 +67,10 @@ To deploy the website:
 
 ## Contributing
 
-We welcome contributions to enhance and improve the Gear Lab website. If you'd like to contribute, please contact us at
+We welcome contributions to enhance and improve the Gear Lab website. If you'd like to contribute, please contact us at:
 
-lorenzo.palazzetti@unifi.it
-francesco.bettisorbelli@unipg.it 
+- lorenzo.palazzetti@unifi.it
+- francesco.bettisorbelli@unipg.it 
 
 ## License
 
