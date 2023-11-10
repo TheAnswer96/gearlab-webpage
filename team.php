@@ -51,12 +51,12 @@
                 <h3>Alfredo Navarra</h3>
                 <h4>Full Professor</h4>
                 <p>
-                    He is Associate Professor since 2015 at the Mathematics and Computer Science Department,
-                    University of Perugia, Italy. He received his Ph.D. in Computer Science in 2004 from "Sapienza"
+                    He received his Ph.D. in Computer Science in 2004 from "Sapienza"
                     University of Rome. Before joining the University of Perugia in 2007, he has been with various
                     international research institutes like the INRIA of Sophia Antipolis, France; the Dept of
-                    Computer Science at the Univ. of L'Aquila, Italy; the LaBRI, Univ. of Bordeaux, France. His
-                    research interests include algorithms, computational complexity, distributed computing and
+                    Computer Science at the Univ. of L'Aquila, Italy; the LaBRI, Univ. of Bordeaux, France. Since 2023,
+                    he is a Full Professor at the University of Perugia. His research interests include algorithms,
+                    computational complexity, distributed computing and
                     networking.
                 </p>
                 <div class="block-link">
@@ -79,8 +79,8 @@
                     University of Florence, Italy, in 2018. He was a postdoc researcher at the Missouri University
                     of Science and Technology University, USA, under the supervision of Prof. Sajal K. Das in 2020,
                     and at the University of Perugia in 2018, 2021-2022 under the supervision of Cristina M.
-                    Pinotti. Currently, he is an assistant professor at the University of Perugia. His research
-                    interests include algorithms design, combinatorial optimization, unmanned vehicles.
+                    Pinotti. Currently, he is an assistant professor (RTDb) at the University of Perugia. His research
+                    interests include algorithms design, combinatorial optimization, and unmanned vehicles.
                 </p>
                 <div class="block-link">
                     <a href="https://www.unipg.it/personale/francesco.bettisorbelli" target="_blank"
@@ -116,13 +116,12 @@
             </div>
             <div class="block-content">
                 <h3>Lorenzo Palazzetti</h3>
-                <h4>PhD student</h4>
+                <h4>Ph.D. student</h4>
                 <p>
                     He received the Bachelor and Master degrees in Computer Science from the University of Perugia,
-                    Italy, in 2018 and 2020, respectively. He is currently a third year PhD student under the
+                    Italy, in 2018 and 2020, respectively. He is currently a third year Ph.D. student under the
                     supervision of Prof. Cristina M. Pinotti at the University of Florence, Italy. His research
-                    interests include design and analysis of algorithms, combinatorial optimization, unmanned
-                    vehicles.
+                    interests include design and analysis of algorithms, combinatorial optimization, unmanned vehicles.
                 </p>
                 <div class="block-link">
                     <a href="https://www.linkedin.com/in/lorenzo-palazzetti-a706b61a3" target="_blank"
@@ -130,6 +129,73 @@
                 </div>
             </div>
         </div>
+
+        <div class="box">
+            <div class="block-image">
+                <img src="images/team/piselli.jpg" alt="Francesco Piselli">
+            </div>
+            <div class="block-content">
+                <h3>Francesco Piselli</h3>
+                <h4>Ph.D. student</h4>
+                <p>
+                    He received the Bachelor degree in Computer Science from the University of Perugia, Italy, in 2019,
+                    and the Master degree cum laude in Computer Science from the same university in 2022. He is
+                    currently a second year Ph.D. student under the supervision of Prof. Alfredo Navarra at the
+                    University
+                    of Florence, Italy. His research interests include distributed algorithms and approximation
+                    algorithms.
+                </p>
+                <div class="block-link">
+                    <a href="https://www.linkedin.com/in/francesco-piselli-42456b120" target="_blank"
+                       class="btn btn-primary">Personal Page</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="block-image">
+                <img src="images/team/das.jpg" alt="Papiya Das">
+            </div>
+            <div class=" block-content">
+                <h3>Papiya Das</h3>
+                <h4>Ph.D. student</h4>
+                <p>
+                    She received her Bachelor's and Master's degrees in Electronic Science from the University of
+                    Calcutta, India, and Jadavpur University, India, in 2020 and 2022, respectively. She is currently a
+                    first-year Ph.D. student at the University of Florence, Italy, under the supervision of Prof.
+                    Cristina M. Pinotti. Her research interests include the design and analysis of algorithms,
+                    communication networks, IoT, and unmanned vehicles.
+                </p>
+                <div class="block-link">
+                    <a href="https://www.unifi.it/" target="_blank"
+                       class="btn btn-primary">Personal Page</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="block-image">
+                <img src="images/team/empty.jpg" alt="Shafaq Khan">
+            </div>
+            <div class=" block-content">
+                <h3>Shafaq Khan</h3>
+                <h4>Ph.D. student</h4>
+                <p>
+                    She received her Bachelor's and Master's degrees in Electronic Science from the University of
+                    Engineering and Technology, Taxila, Pakistan and Ghulam Ishaq Khan Institute of Engineering Sciences
+                    and Technology, Pakistan, in 2012 and 2018, respectively.
+                    She is currently a
+                    first-year Ph.D. student at the University of Naples, Italy, under the supervision of Dr.
+                    Francesco Betti Sorbelli. Her research interests include the design and analysis of algorithms,
+                    communication networks, IoT, and unmanned vehicles.
+                </p>
+                <div class="block-link">
+                    <a href="https://www.unina.it/" target="_blank"
+                       class="btn btn-primary">Personal Page</a>
+                </div>
+            </div>
+        </div>
+
 
         <br>
         <h2>External Collaborators</h2>
@@ -143,14 +209,14 @@
                 <h3>Federico Corò</h3>
                 <h4>Assistant Professor</h4>
                 <p>
-                    He is currently an assistant professor (RTDa) at the Mathematics department of the University of
-                    Padua in Italy. He received his BSc and MSc in Computer Science from the University of Perugia in 2014
+                    He received his BSc and MSc in Computer Science from the University of Perugia in 2014
                     and 2016, respectively, and his Ph.D. in Computer Science from the Gran Sasso Science Institute in
                     L'Aquila, Italy in 2019. Prior to his current position, he was a postdoctoral researcher at La
                     Sapienza University of Rome in Italy from 2019 to 2020, at the Missouri University of Science and
                     Technology in the United States from 2021 to 2022, and the University of Perugia from 2022 to 2023.
-                    His research interests include various areas of theoretical computer science, such as combinatorial
-                    optimization, network analysis, and algorithm design and implementation.
+                    He is currently an assistant professor (RTDa) at the Mathematics department of the University of
+                    Padua in Italy. His research interests include various areas of theoretical computer science, such
+                    as combinatorial optimization, network analysis, and algorithm design and implementation.
                 </p>
                 <div class="block-link">
                     <a href="https://sites.google.com/view/federicocoro" target="_blank" class="btn btn-primary">Personal
@@ -158,6 +224,11 @@
                 </div>
             </div>
         </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
 </section>
 

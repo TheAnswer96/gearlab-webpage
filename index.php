@@ -43,13 +43,13 @@
     </a>
 
     <!-- Button to reveal text section -->
-    <div class="reveal-button">
-        <button onclick="revealTextSection()">Discover More</button>
-    </div>
+<!--    <div class="reveal-button">-->
+<!--        <button onclick="revealTextSection()">Discover More</button>-->
+<!--    </div>-->
 </div>
 
 <!-- Text Sections -->
-<div id="text-section" class="text-section" style="display: none;">
+<div id="text-section" class="text-section">
     <h1>Latest News</h1>
     <div class="container">
         <div class="row">
