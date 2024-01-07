@@ -163,11 +163,12 @@
                     She received her Bachelor's and Master's degrees in Electronic Science from the University of
                     Calcutta, India, and Jadavpur University, India, in 2020 and 2022, respectively. She is currently a
                     first-year Ph.D. student at the University of Florence, Italy, under the supervision of Prof.
-                    Cristina M. Pinotti. Her research interests include the design and analysis of algorithms,
+                    Cristina M. Pinotti and Dr. Francesco Betti Sorbelli.
+                    Her research interests include the design and analysis of algorithms,
                     communication networks, IoT, and unmanned vehicles.
                 </p>
                 <div class="block-link">
-                    <a href="https://www.unifi.it/" target="_blank"
+                    <a href="https://www.linkedin.com/in/papiya%2Ddas%2D5319541a0" target="_blank"
                        class="btn btn-primary">Personal Page</a>
                 </div>
             </div>
@@ -181,16 +182,16 @@
                 <h3>Shafaq Khan</h3>
                 <h4>Ph.D. student</h4>
                 <p>
-                    She received her Bachelor's and Master's degrees in Electronic Science from the University of
-                    Engineering and Technology, Taxila, Pakistan and Ghulam Ishaq Khan Institute of Engineering Sciences
-                    and Technology, Pakistan, in 2012 and 2018, respectively.
-                    She is currently a
-                    first-year Ph.D. student at the University of Naples, Italy, under the supervision of Dr.
-                    Francesco Betti Sorbelli. Her research interests include the design and analysis of algorithms,
-                    communication networks, IoT, and unmanned vehicles.
+                    She received her Bachelor's and Master's degrees in Software Engineering from the University of
+                    Engineering and Technology, Taxila, Pakistan and in Computer System Engineering from the Ghulam
+                    Ishaq Khan Institute of Engineering Sciences and Technology, Pakistan, in 2014 and 2018,
+                    respectively. She is currently a first-year Ph.D. student at the University of Naples, Italy, under
+                    the supervision of Prof. Cristina M. Pinotti and Dr. Francesco Betti Sorbelli.
+                    Her research interests include the design and
+                    analysis of algorithms, communication networks, IoT, and unmanned vehicles.
                 </p>
                 <div class="block-link">
-                    <a href="https://www.unina.it/" target="_blank"
+                    <a href="https://www.linkedin.com/in/shafaq-khan-554520bb" target="_blank"
                        class="btn btn-primary">Personal Page</a>
                 </div>
             </div>
