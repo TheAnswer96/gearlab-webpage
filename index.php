@@ -18,12 +18,54 @@
 <!-- Navbar -->
 <?php include_once('layout/header.html'); ?>
 
+<?php
+function countFundedProjectsFromPage($path) {
+    $html = @file_get_contents($path);
+    if ($html === false) {
+        return 0;
+    }
+
+    preg_match_all('/class="([^"]+)"/', $html, $matches);
+    $count = 0;
+    foreach ($matches[1] as $classList) {
+        $tokens = preg_split('/\s+/', trim($classList));
+        if (in_array('project-card', $tokens, true)) {
+            $count++;
+        }
+    }
+
+    return $count;
+}
+
+function countPeopleFromTeamPage($path) {
+    $html = @file_get_contents($path);
+    if ($html === false) {
+        return 0;
+    }
+
+    preg_match_all('/class="([^"]+)"/', $html, $matches);
+    $count = 0;
+    foreach ($matches[1] as $classList) {
+        $tokens = preg_split('/\s+/', trim($classList));
+        if (in_array('team-card', $tokens, true)) {
+            $count++;
+        }
+    }
+
+    return $count;
+}
+
+$currentYear = (int) date('Y');
+$fundedProjectsCount = countFundedProjectsFromPage(__DIR__ . '/projects.php');
+$peopleCount = countPeopleFromTeamPage(__DIR__ . '/team.php');
+?>
+
 <section class="home-hero">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 hero-content">
                 <p class="hero-eyebrow">University of Perugia</p>
-                <h1>Algorithms for emerging models in networks, UAV systems, and optimization.</h1>
+                <h1>GEAR Lab - Group of rEsearch in Algorithms for emeRgent models</h1>
                 <p class="hero-text">
                     GEAR Lab designs rigorous algorithmic methods for practical and high-impact scenarios, from urban
                     drone routing to resilient communication systems.
@@ -50,15 +92,15 @@
                 <span class="snapshot-label">Research Areas</span>
             </div>
             <div class="snapshot-card">
-                <span class="snapshot-number">3</span>
+                <span class="snapshot-number" id="stat-funded-projects"><?php echo $fundedProjectsCount; ?></span>
                 <span class="snapshot-label">Funded Projects</span>
             </div>
             <div class="snapshot-card">
-                <span class="snapshot-number">20+</span>
-                <span class="snapshot-label">Recent Publications</span>
+                <span class="snapshot-number" id="stat-recent-publications">-</span>
+                <span class="snapshot-label" id="stat-recent-publications-label">Recent Publications (<?php echo $currentYear; ?>)</span>
             </div>
             <div class="snapshot-card">
-                <span class="snapshot-number">10+</span>
+                <span class="snapshot-number" id="stat-people"><?php echo $peopleCount; ?></span>
                 <span class="snapshot-label">Researchers & Collaborators</span>
             </div>
         </div>
@@ -106,6 +148,80 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    (function () {
+        var fundedProjectsEl = document.getElementById('stat-funded-projects');
+        var recentPublicationsEl = document.getElementById('stat-recent-publications');
+        var recentPublicationsLabelEl = document.getElementById('stat-recent-publications-label');
+        var peopleEl = document.getElementById('stat-people');
+        var requestUrl = 'stats.php?t=' + Date.now();
+
+        function applyStats(data) {
+            if (typeof data.fundedProjects === 'number') {
+                fundedProjectsEl.textContent = data.fundedProjects;
+            }
+            if (typeof data.recentPublications === 'number') {
+                recentPublicationsEl.textContent = data.recentPublications;
+            }
+            if (typeof data.currentYear === 'number') {
+                recentPublicationsLabelEl.textContent = 'Recent Publications (' + data.currentYear + ')';
+            }
+            if (typeof data.people === 'number') {
+                peopleEl.textContent = data.people;
+            }
+        }
+
+        if (window.AbortController && window.fetch) {
+            var controller = new AbortController();
+            var timeoutId = setTimeout(function () {
+                controller.abort();
+            }, 12000);
+
+            fetch(requestUrl, {cache: 'no-store', signal: controller.signal})
+                .then(function (response) {
+                    clearTimeout(timeoutId);
+                    if (!response.ok) {
+                        throw new Error('Unable to load stats');
+                    }
+                    return response.text();
+                })
+                .then(function (body) {
+                    var data = JSON.parse(body);
+                    applyStats(data);
+                })
+                .catch(function () {
+                    recentPublicationsEl.textContent = '-';
+                });
+            return;
+        }
+
+        // Fallback for environments where fetch/AbortController is unavailable.
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl, true);
+        xhr.timeout = 12000;
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState !== 4) {
+                return;
+            }
+            if (xhr.status >= 200 && xhr.status < 300) {
+                try {
+                    applyStats(JSON.parse(xhr.responseText));
+                } catch (e) {
+                    recentPublicationsEl.textContent = '-';
+                }
+                return;
+            }
+            recentPublicationsEl.textContent = '-';
+        };
+        xhr.ontimeout = function () {
+            recentPublicationsEl.textContent = '-';
+        };
+        xhr.onerror = function () {
+            recentPublicationsEl.textContent = '-';
+        };
+        xhr.send();
+    })();
+</script>
 </body>
 
 </html>
