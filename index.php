@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css?v=<?php echo filemtime(__DIR__ . '/style/style.css'); ?>">
 </head>
 
 <body class="home-page">
@@ -77,10 +77,47 @@ $peopleCount = countPeopleFromTeamPage(__DIR__ . '/team.php');
             </div>
             <div class="col-lg-6">
                 <div class="hero-image-wrap">
-                    <img src="images/home/image2.jpg" alt="GEAR Lab activity" class="hero-image">
+                    <?php
+                    $heroImages = glob(__DIR__ . '/images/home/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', GLOB_BRACE);
+                    sort($heroImages);
+                    if (empty($heroImages)) {
+                        $heroImages = [__DIR__ . '/images/home/image2.jpg'];
+                    }
+                    ?>
+                    <div id="homeHeroCarousel" class="carousel slide carousel-fade hero-carousel" data-ride="carousel" data-interval="5500">
+                        <div class="carousel-inner">
+                            <?php foreach ($heroImages as $index => $imagePath): ?>
+                                <?php $relativePath = 'images/home/' . basename($imagePath); ?>
+                                <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                                    <img src="<?php echo htmlspecialchars($relativePath, ENT_QUOTES, 'UTF-8'); ?>"
+                                         alt="GEAR Lab activity <?php echo $index + 1; ?>"
+                                         class="hero-carousel-image">
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="home-about">
+    <div class="container">
+        <h2>Research Focus</h2>
+        <p>
+            At GEAR LAB, in the last couple of years, we have concentrated on algorithms for the UAV world: localization
+            algorithms, data collection in agriculture by integrating IoT devices on the ground, power-line maintenance,
+            urban monitoring, and last-mile deliveries. We are also studying an infrastructure of web cameras distributed
+            across urban areas to replace human control and make autonomous UAV flights in cities feasible and safe.
+            Communication aspects are always central in our applications. Our methodology starts from deep structural
+            modeling of each problem and then develops combinatorial algorithms (DP, ILP) with guaranteed performance,
+            validated through experimental simulations. As complexity grows, structural modeling and analysis can become
+            harder than learning. For this reason, we are integrating learning models in specific phases of UAV
+            applications, including computer vision for invasive pest detection in agriculture, crop replication in
+            digital labs, UAV flight monitoring in urban areas, and ground-driven UAV swarm control.
+        </p>
+        <a href="research.php" class="home-about-link">Go to Research</a>
     </div>
 </section>
 
@@ -120,6 +157,7 @@ $peopleCount = countPeopleFromTeamPage(__DIR__ . '/team.php');
                     <h3>BREADCRUMBS Project Milestone</h3>
                     <p class="news-meta">February 2026</p>
                     <p>New results on connectivity-aware and risk-aware UAV route planning in urban BVLOS scenarios.</p>
+                    <a href="projects.php" class="news-link">Go to Grants</a>
                 </article>
             </div>
             <div class="col-md-4 mb-4">
@@ -128,6 +166,7 @@ $peopleCount = countPeopleFromTeamPage(__DIR__ . '/team.php');
                     <h3>Publications Updated</h3>
                     <p class="news-meta">2026</p>
                     <p>The publications list now loads directly from DBLP and is continuously aligned with current output.</p>
+                    <a href="publications.php" class="news-link">Go to Publications</a>
                 </article>
             </div>
             <div class="col-md-4 mb-4">
@@ -136,6 +175,7 @@ $peopleCount = countPeopleFromTeamPage(__DIR__ . '/team.php');
                     <h3>Team and Collaborator Updates</h3>
                     <p class="news-meta">2026</p>
                     <p>The team page reflects current positions and external collaborations across partner institutions.</p>
+                    <a href="team.php" class="news-link">Go to Team</a>
                 </article>
             </div>
         </div>

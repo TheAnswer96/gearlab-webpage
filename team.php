@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css?v=<?php echo filemtime(__DIR__ . '/style/style.css'); ?>">
 </head>
 
 <body class="team-page">
@@ -57,6 +57,16 @@
                     <p class="team-role">Associate Professor</p>
                     <p>He received the Bachelor and Master degrees cum laude in Computer Science from the University of Perugia, Italy, in 2007 and 2010, respectively, and his Ph.D. in Computer Science from the University of Florence, Italy, in 2018. He was a postdoc researcher at the Missouri University of Science and Technology University, USA, under the supervision of Prof. Sajal K. Das in 2020, and at the University of Perugia in 2018, 2021-2022 under the supervision of Cristina M. Pinotti. Since October 2025, he is an associate professor at the University of Perugia. His research interests include algorithms design, combinatorial optimization, and unmanned vehicles.</p>
                     <a href="https://www.unipg.it/personale/francesco.bettisorbelli" target="_blank" class="team-link">Personal Page</a>
+                </div>
+            </article>
+
+            <article class="team-card">
+                <img src="images/team/mostarda.png" alt="Leonardo Mostarda" class="team-photo">
+                <div class="team-card-content">
+                    <h3>Leonardo Mostarda</h3>
+                    <p class="team-role">Associate Professor</p>
+                    <p>Associate Professor at the Department of Mathematics and Computer Science, University of Perugia. His research interests include distributed systems, IoT security, and blockchain technologies.</p>
+                    <a href="https://www.unipg.it/personale/leonardo.mostarda" target="_blank" class="team-link">Personal Page</a>
                 </div>
             </article>
 

@@ -98,14 +98,25 @@ function countCurrentYearPublications($pids, $targetYear) {
 }
 
 $currentYear = (int) date('Y');
+$fundedProjects = countByClass(__DIR__ . '/projects.php', 'project-card');
+$people = countByClass(__DIR__ . '/team.php', 'team-card');
 $cachePath = sys_get_temp_dir() . '/gearlab_stats_cache_v3_' . $currentYear . '.json';
 $cacheTtlSeconds = 15 * 60;
 
 if (is_file($cachePath) && (time() - filemtime($cachePath)) < $cacheTtlSeconds) {
     $cached = @file_get_contents($cachePath);
     if ($cached !== false) {
-        echo $cached;
-        exit;
+        $cachedData = json_decode($cached, true);
+        if (is_array($cachedData)) {
+            $cachedData['currentYear'] = $currentYear;
+            $cachedData['fundedProjects'] = $fundedProjects;
+            $cachedData['people'] = $people;
+            $cachedJson = json_encode($cachedData);
+            if ($cachedJson !== false) {
+                echo $cachedJson;
+                exit;
+            }
+        }
     }
 }
 
@@ -113,8 +124,8 @@ $pubStats = countCurrentYearPublications(['25/927', '306/6867', '222/8346', 'p/M
 
 $stats = [
     'currentYear' => $currentYear,
-    'fundedProjects' => countByClass(__DIR__ . '/projects.php', 'project-card'),
-    'people' => countByClass(__DIR__ . '/team.php', 'team-card'),
+    'fundedProjects' => $fundedProjects,
+    'people' => $people,
     'recentPublications' => $pubStats['fetchedAny'] ? $pubStats['count'] : null,
 ];
 
