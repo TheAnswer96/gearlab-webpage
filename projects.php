@@ -36,7 +36,7 @@
                     <h3>Building up Robust and Efficient routing Algorithms for Drones by integrating Connectivity and Risk awareness in an Urban air Mobility Bvlos Scenario</h3>
                     <p class="project-period">Nov 2024 - Feb 2026</p>
                     <p>In this project, we propose to plan BVLoS UAVs flights by focusing on a few key missions as follows: i) suburban missions: UAVs are used for collecting images/data or for performing aerial work such as spraying on agriculture or monitoring corridors like rivers, electricity, and gas pipelines; and ii) urban missions: UAVs are used for structural health monitoring of buildings, traffic monitoring, food/beverage, small parcel mail, or biomedical goods delivery. In suburban missions, we will i) analyze the link quality and constraints offered by the cellular networks; ii) analyze the risk of UAVs; and iii) propose routing algorithms that consider both connectivity and risk assessment processes. In urban missions, we will i) optimize the Quality of Service (QoS) of the communications; ii) evaluate the security and safety robustness; and iii) devise advanced UAV routing and scheduling algorithms extended also to multiple UAVs.</p>
-                    <a href="https://github.com/breadcrumbsprin2022pnrr/" target="_blank" class="project-link">More</a>
+                    <a href="https://breadcrumbsprin2022pnrr.github.io" target="_blank" class="project-link">More</a>
                 </div>
             </article>
 

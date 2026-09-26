@@ -36,7 +36,7 @@
             $url = "https://dblp.org/pid/" . $pid . ".xml";
             $context = stream_context_create([
                 'http' => [
-                    'timeout' => 10,
+                    'timeout' => 4,
                     'user_agent' => 'GEARLabWeb/1.0',
                 ],
             ]);
@@ -158,61 +158,101 @@
             return $entries;
         }
 
+        function readPublicationsCache($cachePath) {
+            if (!is_file($cachePath)) {
+                return null;
+            }
+            $raw = @file_get_contents($cachePath);
+            if ($raw === false) {
+                return null;
+            }
+            $data = json_decode($raw, true);
+            if (!is_array($data)) {
+                return null;
+            }
+            return $data;
+        }
+
+        function writePublicationsCache($cachePath, $uniqueKeys) {
+            $payload = [
+                'generatedAt' => time(),
+                'uniqueKeys' => $uniqueKeys,
+            ];
+            @file_put_contents($cachePath, json_encode($payload));
+        }
+
         $pids = ['25/927', '306/6867', '222/8346', 'p/MCPinotti', 'n/AlfredoNavarra'];
 
+        $cachePath = sys_get_temp_dir() . '/gearlab_publications_cache_v1.json';
+        $cachedData = readPublicationsCache($cachePath);
+        $cacheIsAvailable = is_array($cachedData)
+            && isset($cachedData['generatedAt'], $cachedData['uniqueKeys'])
+            && is_array($cachedData['uniqueKeys']);
+
+        $usedCache = false;
         $uniqueKeys = [];
         $fetchErrors = [];
 
-        foreach ($pids as $pid) {
-            $dblpData = fetchDBLPDataByPID($pid);
+        // Fast path: always serve cached data when available.
+        if ($cacheIsAvailable) {
+            $uniqueKeys = $cachedData['uniqueKeys'];
+            $usedCache = true;
+        } else {
+            foreach ($pids as $pid) {
+                $dblpData = fetchDBLPDataByPID($pid);
 
-            if ($dblpData === false) {
-                $fetchErrors[] = $pid;
-                continue;
-            }
-
-            $parsedEntries = parseDBLPPublications($dblpData);
-
-            foreach ($parsedEntries as $parsedEntry) {
-                $type = $parsedEntry['type'];
-                $key = $parsedEntry['key'] ?: 'N/A';
-                $year = $parsedEntry['year'] ?: 'N/A';
-
-                if (strpos($key, 'corr') !== false) {
+                if ($dblpData === false) {
+                    $fetchErrors[] = $pid;
                     continue;
                 }
 
-                if (!isset($uniqueKeys[$year])) {
-                    $uniqueKeys[$year] = [];
-                }
+                $parsedEntries = parseDBLPPublications($dblpData);
 
-                if (!in_array($key, array_column($uniqueKeys[$year], 'key'), true)) {
-                    $articleFields = [];
-                    if ($type === 'article') {
-                        $articleFields = [
-                            'pages' => $parsedEntry['pages'] ?? 'N/A',
-                            'volume' => $parsedEntry['volume'] ?? 'N/A',
-                            'journal' => $parsedEntry['journal'] ?? 'N/A',
-                        ];
+                foreach ($parsedEntries as $parsedEntry) {
+                    $type = $parsedEntry['type'];
+                    $key = $parsedEntry['key'] ?: 'N/A';
+                    $year = $parsedEntry['year'] ?: 'N/A';
+
+                    if (strpos($key, 'corr') !== false) {
+                        continue;
                     }
 
-                    $inproceedingsFields = [];
-                    if ($type === 'inproceedings') {
-                        $inproceedingsFields = [
-                            'pages' => $parsedEntry['pages'] ?? 'N/A',
-                            'booktitle' => $parsedEntry['booktitle'] ?? 'N/A',
-                        ];
+                    if (!isset($uniqueKeys[$year])) {
+                        $uniqueKeys[$year] = [];
                     }
 
-                    $uniqueKeys[$year][] = [
-                        'key' => $key,
-                        'title' => $parsedEntry['title'] ?? 'N/A',
-                        'authors' => $parsedEntry['authors'] ?? [],
-                        'articleFields' => $articleFields,
-                        'inproceedingsFields' => $inproceedingsFields,
-                        'doi' => $parsedEntry['ee'] ?? [],
-                    ];
+                    if (!in_array($key, array_column($uniqueKeys[$year], 'key'), true)) {
+                        $articleFields = [];
+                        if ($type === 'article') {
+                            $articleFields = [
+                                'pages' => $parsedEntry['pages'] ?? 'N/A',
+                                'volume' => $parsedEntry['volume'] ?? 'N/A',
+                                'journal' => $parsedEntry['journal'] ?? 'N/A',
+                            ];
+                        }
+
+                        $inproceedingsFields = [];
+                        if ($type === 'inproceedings') {
+                            $inproceedingsFields = [
+                                'pages' => $parsedEntry['pages'] ?? 'N/A',
+                                'booktitle' => $parsedEntry['booktitle'] ?? 'N/A',
+                            ];
+                        }
+
+                        $uniqueKeys[$year][] = [
+                            'key' => $key,
+                            'title' => $parsedEntry['title'] ?? 'N/A',
+                            'authors' => $parsedEntry['authors'] ?? [],
+                            'articleFields' => $articleFields,
+                            'inproceedingsFields' => $inproceedingsFields,
+                            'doi' => $parsedEntry['ee'] ?? [],
+                        ];
+                    }
                 }
+            }
+
+            if (!empty($uniqueKeys)) {
+                writePublicationsCache($cachePath, $uniqueKeys);
             }
         }
 
@@ -220,7 +260,7 @@
         $currentYear = (int) date('Y');
         $minYear = $currentYear - 6;
 
-        if (!empty($fetchErrors)) {
+        if (!empty($fetchErrors) && !$usedCache) {
             echo '<div class="publications-alert">Some DBLP profiles could not be fetched right now.</div>';
         }
 
